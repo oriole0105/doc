@@ -1,0 +1,76 @@
+
+# 日本旅遊規畫
+
+## (第一天) 半天   (住品川)
+* 品川水族館
+
+## 藤子不二雄博物館 (第二天) 
+* https://www.e-tix.jp/fujiko-museum/
+* 東京鐵塔
+
+## 橫濱一日遊 (第二天) (住)
+
+
+## 迪士尼樂園一日遊 (第四天)
+
+## 台場一日遊 (第五天)
+
+## 淺草寺 / 晴空塔 (第六天)
+
+## 上野半日遊 (第七天)
+
+----
+
+[plantuml]
+----
+@startuml
+start
+
+partition "開始流程" {
+#lightblue :**<匯入設定檔>**;
+#lightblue :**<匯入待辦檔>**;
+#lightblue :**<匯入已完成檔>**;
+}
+
+fork
+
+partition "我建立的任務處理流程" {
+
+#lightblue :建立任務\n(1) 這個任務是root還是某個子任務\n(2) 決定長/中/短期任務;
+
+if (分派工作?) then (yes)
+  #lightgreen :匯出任務給同仁\n**<分配選取任務>**\n檔名: assignment_for_負責人_日期;
+  #orange :同仁處理流程;
+  #lightgreen :匯入同仁已完成的工作任務\n**<匯入協作包>**\n檔名 results_from_負責人_for_指派人_日期;
+else (no)
+  #lightblue  :更新及記錄任務的執行;
+endif
+}
+
+fork again
+
+partition "他人給我的任務處理流程" {
+
+#lightgreen :**<匯入協作包>**\n檔名: assignment_for_負責人_日期;
+#orange :更新及記錄任務的執行;
+#orange :完成分派工作;
+
+#lightgreen :**<匯出協作成果>**\n檔名 results_from_負責人_for_指派人_日期;
+
+}
+
+end fork
+
+partition "備份流程" {
+#lightblue :備份**<匯出待辦清單>**;
+#lightblue :備份**<匯出已完成清單>**;
+}
+
+end
+@enduml
+----
+
+
+
+
+* 上野動物園

@@ -12,10 +12,7 @@
 
 [cols=“1,2,2,3”, options=“header”]
 |===
-|比較項目
-|SVN
-|Git
-|誰比較好
+|比較項目 |SVN |Git |誰比較好
 
 |*架構模式*
 |集中式版本控制（Centralized）
